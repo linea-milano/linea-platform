@@ -15,6 +15,10 @@
     }
 }
 
+html {
+    background-color: black;
+}
+
 a {
     @apply underline
 }
