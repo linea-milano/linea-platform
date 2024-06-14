@@ -19,6 +19,10 @@ html {
   background-color: #000000; /* Colore di sfondo nero */
 }
 
+body {
+  background-color: #000000; /* Assicurati che anche il body abbia lo sfondo nero */
+}
+
 a {
     @apply underline
 }
