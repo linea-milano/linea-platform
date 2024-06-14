@@ -15,8 +15,8 @@
     }
 }
 
-html, body {
-    @apply bg-black;
+html {
+  background-color: #000000; /* Cambia il colore esadecimale per il colore di sfondo desiderato */
 }
 
 a {
