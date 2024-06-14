@@ -6,7 +6,7 @@
 
 @layer base {
     :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-neutral-900 text-yellow-200;
+        @apply px-1 py-0.5 font-mono rounded bg-black-900 text-yellow-200;
         font-size: 0.9em;
     }
 
@@ -16,7 +16,7 @@
 }
 
 html {
-  background-color: #000000; /* Cambia il colore esadecimale per il colore di sfondo desiderato */
+  background-color: #000000; /* Colore di sfondo nero */
 }
 
 a {
