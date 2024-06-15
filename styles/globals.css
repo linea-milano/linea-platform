@@ -57,3 +57,19 @@ a {
     height: auto; /* Mantieni le proporzioni */
 }
 
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+  }
+  
+  .video-player {
+    margin-top: 20px;
+  }
+
+  
+  
