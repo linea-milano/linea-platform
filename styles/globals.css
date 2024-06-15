@@ -51,3 +51,8 @@ a {
     font-weight: normal;
     font-style: normal;
 }
+
+.logo-menu {
+    width: 20px; /* Imposta la larghezza desiderata */
+    height: auto; /* Mantieni le proporzioni */
+}
