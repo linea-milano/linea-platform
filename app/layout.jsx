@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" data-theme="lofi">
             <head>
-                <link rel="icon" href="/favicon.svg" sizes="any" />
+                <link rel="icon" href="/linea-logo.png" sizes="any" />
             </head>
             <body className="antialiased text-white" style={{ backgroundColor: '#000000' }}>
                 <div className="flex flex-col min-h-screen px-6 bg-grid-pattern sm:px-12">
