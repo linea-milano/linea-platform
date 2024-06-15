@@ -1,22 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-neutral-900 text-yellow-200;
-        font-size: 0.9em;
-    }
-
-    h1 {
-        @apply mb-6 text-4xl font-bold tracking-tight md:text-5xl;
-    }
-}
-
-html {
-  background-color: #000000;
+.schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
 }
 
 .evento {
@@ -24,6 +11,7 @@ html {
     align-items: center;
     color: white;
     font-size: x-large;
+    margin: 10px 0;
 }
 
 .immagine {
@@ -33,17 +21,11 @@ html {
     border-radius: 15px;
     cursor: pointer;
     margin-right: 20px;
-    transition: 1s;
-    filter: hue-rotate(0deg);
 }
 
 .immagine:hover {
+    transition: 1s;
     filter: hue-rotate(180deg);
-}
-
-.riga-bianca {
-    border-top: 1px solid white;
-    margin: 10px 0;
 }
 
 .info {
@@ -52,8 +34,6 @@ html {
 }
 
 .tag {
-    display: contents;
-    text-align: center;
     background-color: black;
     padding: 5px;
     color: white;
@@ -67,15 +47,10 @@ html {
 
 .testo-info {
     font-size: xxx-large;
-    margin: 0;
-    padding: 0;
     color: white;
 }
 
 .orario-corrente {
-    float: left;
-    margin-top: 0px;
-    margin-right: 0px;
     animation: blink 1s linear infinite;
     color: red;
     font-size: 90px;
@@ -85,102 +60,4 @@ html {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
-}
-
-.schedule-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-size: x-large;
-}
-
-.event {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.event img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
-    transition: transform 0.2s;
-}
-
-.event img:hover {
-    transform: scale(1.1);
-}
-
-.event-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.event-title {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.event-time {
-    font-size: 1.2em;
-    color: #bbb;
-}
-
-.schedule-title {
-    font-size: 4em;
-    margin-bottom: 20px;
-}
-
-.schedule-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-size: x-large;
-}
-
-.event {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 800px;
-}
-
-.event img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
-    transition: transform 0.2s;
-}
-
-.event img:hover {
-    transform: scale(1.1);
-}
-
-.event-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.event-title {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.event-time {
-    font-size: 1.2em;
-    color: #bbb;
-}
-
-.schedule-title {
-    font-size: 4em;
-    margin-bottom: 20px;
 }
