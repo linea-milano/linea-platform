@@ -1,17 +1,25 @@
-.schedule {
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+#dati {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
-    color: white;
 }
 
 .evento {
     display: flex;
     align-items: center;
     color: white;
-    font-size: x-large;
-    margin: 10px 0;
+    font-size: large;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .immagine {
@@ -26,6 +34,13 @@
 .immagine:hover {
     transition: 1s;
     filter: hue-rotate(180deg);
+    -webkit-filter: hue-rotate(180deg);
+}
+
+.riga-bianca {
+    border-top: 1px solid white;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .info {
@@ -34,6 +49,7 @@
 }
 
 .tag {
+    display: inline-block;
     background-color: black;
     padding: 5px;
     color: white;
@@ -45,19 +61,44 @@
     color: black;
 }
 
-.testo-info {
-    font-size: x-small;
+.nome, .data, .orario {
+    font-size: large;
+    margin: 0;
+    padding: 0;
     color: white;
 }
 
 .orario-corrente {
+    margin-left: auto;
     animation: blink 1s linear infinite;
     color: red;
-    font-size: 90px;
+    font-size: large;
 }
 
 @keyframes blink {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .evento {
+        font-size: small;
+    }
+}
+
+@media (min-width: 769px) {
+    .evento {
+        font-size: medium;
+    }
+}
+
+@media (min-width: 1280px) {
+    .evento {
+        font-size: medium;
+    }
+
+    .orario-corrente {
+        font-size: 90px;
+    }
 }
