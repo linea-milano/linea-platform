@@ -1,8 +1,22 @@
-/* styles/schedule.css */
-@keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :not(pre) > code {
+        @apply px-1 py-0.5 font-mono rounded bg-neutral-900 text-yellow-200;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        @apply mb-6 text-4xl font-bold tracking-tight md:text-5xl;
+    }
+}
+
+html {
+  background-color: #000000;
 }
 
 .evento {
@@ -19,18 +33,12 @@
     border-radius: 15px;
     cursor: pointer;
     margin-right: 20px;
+    transition: 1s;
+    filter: hue-rotate(0deg);
 }
 
 .immagine:hover {
-    transition: 1s;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-right: 20px;
     filter: hue-rotate(180deg);
-    webkit-filter: hue-rotate(180deg);
 }
 
 .riga-bianca {
@@ -57,22 +65,11 @@
     color: black;
 }
 
-.nome, .data, .orario {
+.testo-info {
     font-size: xxx-large;
     margin: 0;
     padding: 0;
     color: white;
-}
-
-@media (min-width: 769px) {
-    .orario-corrente {
-        float: inline-end;
-        margin-top: 25px;
-        margin-right: 0px;
-        animation: blink 1s linear infinite;
-        color: red;
-        font-size: 90px;
-    }
 }
 
 .orario-corrente {
@@ -84,11 +81,8 @@
     font-size: 90px;
 }
 
-@media (max-width: 768px) {
-    .evento {
-        display: flex;
-        align-items: center;
-        color: white;
-        font-size: smaller;
-    }
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
