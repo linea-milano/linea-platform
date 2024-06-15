@@ -13,7 +13,10 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans]
-            }
+            },
+            spacing: {
+                '150': '150px', // Aggiungi la nuova spaziatura
+            },
         }
     },
     daisyui: {
@@ -32,5 +35,3 @@ module.exports = {
     },
     plugins: [require('daisyui')]
 };
-
-

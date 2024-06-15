@@ -142,4 +142,12 @@ const Audio = () => {
                             <div className="track-title">{track.title}</div>
                         </div>
                     );
-               
+                })}
+            </div>
+            <iframe id="sc-widget" className="soundcloud-widget" scrolling="no" frameBorder="no"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303&auto_play=false"></iframe>
+        </div>
+    );
+};
+
+export default Audio;
