@@ -18,7 +18,7 @@ const AboutPage = () => {
       <p>
         Enrich the subway area and enhance the daily commute experience by hosting community-focused initiatives and creating a platform for open, respectful discussions.
         Our music program embraces an array of genres, from techno and experimental sounds to bass-heavy beats, hip-hop vibes, house, disco, and more.
-        We're committed to championing young and talented artists across various creative domains.
+        We&apos;re committed to championing young and talented artists across various creative domains.
         A vision to transform a subway station into a dynamic hub that connects emerging artists with the broader creative community.
       </p>
       <h2>EDITORIAL</h2>
