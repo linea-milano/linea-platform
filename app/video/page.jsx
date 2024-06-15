@@ -1,6 +1,6 @@
 // app/about/page.js
 import React from 'react';
-import './about.css'; // Usa il file CSS senza .module
+import './video.css'; // Usa il file CSS senza .module
 
 export const metadata = {
   title: 'About Us | Linea Media',
