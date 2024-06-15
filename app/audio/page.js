@@ -4,8 +4,7 @@ import './audio.css';
 
 const Audio = () => {
     const [tracks, setTracks] = useState([]);
-    const [tags, setTags] = useState(new Set());
-
+    
     useEffect(() => {
         const TOKEN_URL = 'https://linea-proxy.xyz/get-token';
         const USER_URL = 'https://linea-proxy.xyz/get-user';
@@ -49,23 +48,9 @@ const Audio = () => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 const tracks = await response.json();
                 setTracks(tracks);
-                populateTags(tracks);
             } catch (error) {
                 console.error('Errore nel recupero delle tracce:', error);
             }
-        }
-
-        function populateTags(tracks) {
-            const tagsSet = new Set();
-            tracks.forEach(track => {
-                if (track.tag_list) {
-                    const trackTags = track.tag_list.split(' ');
-                    trackTags.forEach(tag => {
-                        tagsSet.add(tag);
-                    });
-                }
-            });
-            setTags(tagsSet);
         }
 
         async function init() {
@@ -97,35 +82,9 @@ const Audio = () => {
         });
     };
 
-    const applyFilters = () => {
-        const filter1 = document.getElementById('filter1').value;
-        const filter2 = document.getElementById('filter2').value;
-        const filteredTracks = tracks.filter(track => {
-            const trackTags = track.tag_list ? track.tag_list.split(' ') : [];
-            const filter1Match = filter1 ? trackTags.includes(filter1) : true;
-            const filter2Match = filter2 ? trackTags.includes(filter2) : true;
-            return filter1Match && filter2Match;
-        });
-        setTracks(filteredTracks);
-    };
-
     return (
         <div id="audio-container">
             <h1>AUDIO ARCHIVIO</h1>
-            <div id="filter-container">
-                <select id="filter1" className="filter-select" onChange={applyFilters}>
-                    <option value="">Seleziona Tag 1</option>
-                    {[...tags].map(tag => (
-                        <option key={tag} value={tag}>{tag}</option>
-                    ))}
-                </select>
-                <select id="filter2" className="filter-select" onChange={applyFilters}>
-                    <option value="">Seleziona Tag 2</option>
-                    {[...tags].map(tag => (
-                        <option key={tag} value={tag}>{tag}</option>
-                    ))}
-                </select>
-            </div>
             <div id="tracks">
                 {tracks.map(track => (
                     <div key={track.id} className="track" onClick={() => playTrack(track.permalink_url)}>
