@@ -1,29 +1,31 @@
-/* app/about/about.css */
+/* about.css */
 .container {
     padding: 20px;
-    color: white; /* Adatta il colore al tuo design */
+    color: white;
+    background-color: black;
   }
   
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .container h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
   }
   
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+  .container h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
   }
   
-  p {
-    margin-bottom: 1rem;
+  .container p {
+    margin-bottom: 1em;
   }
   
-  a {
-    color: #2bdcd2; /* Colore dei link */
+  .container a {
+    color: #2bdcd2;
     text-decoration: underline;
   }
   
-  a:hover {
-    color: #016968;
+  .container a:hover {
+    text-decoration: none;
   }
   
