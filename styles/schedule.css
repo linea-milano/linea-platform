@@ -86,3 +86,52 @@ html {
     50% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.event img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.event img:hover {
+    transform: scale(1.1);
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.event-time {
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+.schedule-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
