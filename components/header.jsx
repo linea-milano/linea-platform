@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import lineaLogo from 'public/linea-logo.svg';
+import lineaLogo from 'public/linea-logo.png';
 import githubLogo from 'public/images/github-mark-white.svg';
 
 const navItems = [
