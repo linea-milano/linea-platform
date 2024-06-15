@@ -8,7 +8,7 @@ const navItems = [
     { linkText: 'Schedule', href: '/schedule' },
     { linkText: 'Video', href: '/image-cdn' },
     { linkText: 'Audio', href: '/audio' },
-    { linkText: 'About', href: '/blobs' },
+    { linkText: 'About', href: '/about' },
     { linkText: 'Test', href: '/classics' }
 ];
 
