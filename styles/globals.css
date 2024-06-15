@@ -21,13 +21,12 @@ html {
 
 body {
   background-color: #000000; /* Assicurati che anche il body abbia lo sfondo nero */
-    font-family: 'Asimov', Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+  font-family: 'Asimov', Arial, sans-serif;
+  color: #fff;
 }
 
 a {
-    @apply underline
+    @apply underline;
 }
 
 .markdown {
@@ -46,10 +45,9 @@ a {
     @apply text-neutral-400 bg-neutral-700;
 }
 
-
 @font-face {
     font-family: 'Asimov';
-    src: url('/styles/Asimovprint.otf') format('opentype');
+    src: url('/fonts/Asimovprint.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
