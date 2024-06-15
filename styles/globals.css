@@ -1,3 +1,4 @@
+/* styles/globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
 
 @tailwind base;
@@ -21,97 +22,56 @@ html {
 
 body {
   background-color: #000000; /* Assicurati che anche il body abbia lo sfondo nero */
-  font-family: 'Asimov', Arial, sans-serif;
-  color: #fff;
+    font-family: 'Asimov', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
 }
 
 a {
-  @apply underline;
+    @apply underline;
 }
 
 .markdown {
-  @apply mb-1;
+    @apply mb-1;
 }
 
 .alert .markdown {
-  @apply mb-0;
+    @apply mb-0;
 }
 
 .markdown p {
-  @apply mb-3;
+    @apply mb-3;
 }
 
 .btn:disabled {
-  @apply text-neutral-400 bg-neutral-700;
+    @apply text-neutral-400 bg-neutral-700;
 }
 
 @font-face {
-  font-family: 'Asimov';
-  src: url('/styles/Asimovprint.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Asimov';
+    src: url('/styles/Asimovprint.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* New Styles for Header and Responsive Design */
 .logo-menu {
-  width: 48px;
-  height: auto;
+    width: 50px;
+    height: auto;
 }
 
-@media (max-width: 768px) {
-  .logo-menu {
-    width: 24px;
-    height: auto;
-  }
+.desktop-menu {
+    display: none;
+}
 
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Mobile specific menu styling */
-  .mobile-menu {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
+.mobile-menu {
     display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    border-top: 1px solid #444;
-  }
-
-  .mobile-menu a {
-    color: #fff;
-    font-size: 16px;
-  }
 }
 
 @media (min-width: 768px) {
-  .logo-menu {
-    width: 48px;
-    height: auto;
-  }
-
-  .desktop-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .desktop-menu a {
-    color: #fff;
-    font-size: 18px;
-    margin-right: 20px;
-  }
-
-  .desktop-menu a:hover {
-    color: #2bdcd2;
-  }
+    .desktop-menu {
+        display: flex;
+    }
+    .mobile-menu {
+        display: none;
+    }
 }

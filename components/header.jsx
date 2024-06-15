@@ -1,4 +1,4 @@
-"use client";
+// components/header.jsx
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,9 +16,9 @@ const navItems = [
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="desktop-menu flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
             <Link href="/">
-                <Image src={lineaLogo} alt="Linea logo" className="logo-menu w-12 h-auto" />
+                <Image src={lineaLogo} alt="Linea logo" className="logo-menu" />
             </Link>
             {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
@@ -43,6 +43,18 @@ export function Header() {
                     <Image src={githubLogo} alt="GitHub logo" className="w-7" />
                 </Link>
             </div>
+        </nav>
+    );
+}
+
+export function MobileHeader() {
+    return (
+        <nav className="mobile-menu fixed bottom-0 w-full bg-black text-white flex justify-around py-2">
+            {navItems.map((item, index) => (
+                <Link key={index} href={item.href} className="py-2 px-4">
+                    {item.linkText}
+                </Link>
+            ))}
         </nav>
     );
 }
