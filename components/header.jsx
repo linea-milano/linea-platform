@@ -6,10 +6,9 @@ import githubLogo from 'public/images/github-mark-white.svg';
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Schedule', href: '/schedule' },
-    { linkText: 'Video', href: '/image-cdn' },
+    { linkText: 'Video', href: '/video' },
     { linkText: 'Audio', href: '/audio' },
     { linkText: 'About', href: '/about' },
-    { linkText: 'Test', href: '/classics' }
 ];
 
 export  function Header() {

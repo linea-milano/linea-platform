@@ -1,0 +1,31 @@
+/* about.css */
+.container {
+    padding: 20px;
+    color: white;
+    background-color: black;
+  }
+  
+  .container h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .container h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  .container p {
+    margin-bottom: 1em;
+  }
+  
+  .container a {
+    color: #2bdcd2;
+    text-decoration: underline;
+  }
+  
+  .container a:hover {
+    text-decoration: none;
+  }
+  
