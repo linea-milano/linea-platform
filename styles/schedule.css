@@ -1,0 +1,94 @@
+/* styles/schedule.css */
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.evento {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+}
+
+.immagine {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.immagine:hover {
+    transition: 1s;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+    filter: hue-rotate(180deg);
+    webkit-filter: hue-rotate(180deg);
+}
+
+.riga-bianca {
+    border-top: 1px solid white;
+    margin: 10px 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag {
+    display: contents;
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+}
+
+.tag:hover {
+    background-color: white;
+    color: black;
+}
+
+.nome, .data, .orario {
+    font-size: xxx-large;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+@media (min-width: 769px) {
+    .orario-corrente {
+        float: inline-end;
+        margin-top: 25px;
+        margin-right: 0px;
+        animation: blink 1s linear infinite;
+        color: red;
+        font-size: 90px;
+    }
+}
+
+.orario-corrente {
+    float: left;
+    margin-top: 0px;
+    margin-right: 0px;
+    animation: blink 1s linear infinite;
+    color: red;
+    font-size: 90px;
+}
+
+@media (max-width: 768px) {
+    .evento {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: smaller;
+    }
+}
