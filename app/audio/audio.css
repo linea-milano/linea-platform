@@ -1,27 +1,18 @@
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    padding: 20px;
-}
-
-#audio-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
 #tracks {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -51,18 +42,4 @@ body {
     height: 100px;
     background-color: #fff;
     display: none;
-}
-
-@media (max-width: 768px) {
-    #tracks {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .soundcloud-widget {
-        bottom: 60px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background-color: #fff;
-        display: none;
-    }
 }
