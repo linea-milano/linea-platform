@@ -6,6 +6,10 @@ body {
     margin-bottom: 150px; /* Spazio per il menu in basso */
 }
 
+#audio-container {
+    padding: 20px;
+}
+
 #filter-container {
     margin: 20px 0;
 }
@@ -46,7 +50,7 @@ body {
 
 .soundcloud-widget {
     position: fixed;
-    bottom: 0px; /* Aggiungi spazio per il menu in basso */
+    bottom: 0px;
     left: 0;
     width: 100%;
     height: 100px;
@@ -58,7 +62,6 @@ body {
     #tracks {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .soundcloud-widget {
         bottom: 60px; /* Aggiungi spazio per il menu in basso */
         left: 0;

@@ -75,8 +75,6 @@ const Audio = () => {
                     const userId = await fetchUserId(accessToken);
                     if (userId) {
                         await fetchTracks(userId, accessToken);
-                    } else {
-                        console.error('User ID non trovato.');
                     }
                 }
             } catch (error) {
@@ -86,6 +84,18 @@ const Audio = () => {
 
         init();
     }, []);
+
+    const playTrack = (trackUrl) => {
+        const widgetIframe = document.getElementById('sc-widget');
+        widgetIframe.style.display = 'block';
+        const widget = SC.Widget(widgetIframe);
+        widget.load(trackUrl, {
+            auto_play: true,
+            show_comments: false,
+            hide_related: true,
+            visual: false
+        });
+    };
 
     const applyFilters = () => {
         const filter1 = document.getElementById('filter1').value;
@@ -99,20 +109,8 @@ const Audio = () => {
         setTracks(filteredTracks);
     };
 
-    const playTrack = (trackUrl) => {
-        const widgetIframe = document.getElementById('sc-widget');
-        widgetIframe.style.display = 'block'; // Mostra il player
-        const widget = SC.Widget(widgetIframe);
-        widget.load(trackUrl, {
-            auto_play: true,
-            show_comments: false,
-            hide_related: true,
-            visual: false
-        });
-    };
-
     return (
-        <div>
+        <div id="audio-container">
             <h1>AUDIO ARCHIVIO</h1>
             <div id="filter-container">
                 <select id="filter1" className="filter-select" onChange={applyFilters}>
@@ -129,23 +127,14 @@ const Audio = () => {
                 </select>
             </div>
             <div id="tracks">
-                {tracks.map((track, index) => {
-                    let artworkUrl = track.artwork_url;
-                    if (artworkUrl) {
-                        artworkUrl = artworkUrl.replace('-large', '-t500x500');
-                    } else {
-                        artworkUrl = 'https://via.placeholder.com/500';
-                    }
-                    return (
-                        <div key={index} className="track" onClick={() => playTrack(track.permalink_url)}>
-                            <img src={artworkUrl} alt={track.title} />
-                            <div className="track-title">{track.title}</div>
-                        </div>
-                    );
-                })}
+                {tracks.map(track => (
+                    <div key={track.id} className="track" onClick={() => playTrack(track.permalink_url)}>
+                        <img src={track.artwork_url ? track.artwork_url.replace('-large', '-t500x500') : 'https://via.placeholder.com/500'} alt={track.title} />
+                        <div className="track-title">{track.title}</div>
+                    </div>
+                ))}
             </div>
-            <iframe id="sc-widget" className="soundcloud-widget" scrolling="no" frameBorder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303&auto_play=false"></iframe>
+            <iframe id="sc-widget" className="soundcloud-widget" scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303&auto_play=false"></iframe>
         </div>
     );
 };
