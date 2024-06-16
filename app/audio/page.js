@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './audio.css';
 
 const TOKEN_URL = 'https://linea-proxy.xyz/get-token';

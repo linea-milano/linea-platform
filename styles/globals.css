@@ -1,69 +1,66 @@
-/* styles/globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Asimov', Arial, sans-serif;
+@layer base {
+    :not(pre) > code {
+        @apply px-1 py-0.5 font-mono rounded bg-blue-900 text-yellow-200;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        @apply mb-6 text-4xl font-bold tracking-tight md:text-5xl;
+    }
 }
 
-.logo-menu {
-  width: 50px;
-  height: auto;
+html {
+  background-color: #000000; /* Colore di sfondo nero */
 }
 
-nav {
-  background-color: #000;
-  border-bottom: 1px solid #fff;
+body {
+    font-family: 'Asimov', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
 }
 
-nav ul {
-  display: flex;
-  gap: 1rem;
+a {
+    @apply underline;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
+.markdown {
+    @apply mb-1;
 }
 
-nav a:hover {
-  color: #ccc;
+.alert .markdown {
+    @apply mb-0;
 }
 
-nav button {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: color 0.3s;
+.markdown p {
+    @apply mb-3;
 }
 
-nav button:hover {
-  color: #ccc;
+.btn:disabled {
+    @apply text-neutral-400 bg-neutral-700;
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
+@font-face {
+    font-family: 'Asimov';
+    src: url('/styles/Asimovprint.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  nav button {
-    margin-top: 1rem;
-  }
-
-  .logo-menu {
-    width: 40px;
-  }
+/* Menu Mobile */
+@media (max-width: 1024px) {
+    nav ul {
+        display: none;
+    }
+    
+    nav ul.block {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
