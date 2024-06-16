@@ -1,4 +1,4 @@
-'use client'; // Aggiungiamo questa direttiva per indicare che è un Client Component
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import githubLogo from 'public/images/github-mark-white.svg';
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Schedule', href: '/schedule' },
-    { linkText: 'Video', href: '/video' }, // Modifica l'href per il link Video
+    { linkText: 'Video', href: '/video' },
     { linkText: 'Audio', href: '/audio' },
     { linkText: 'About', href: '/about' },
     { linkText: 'Test', href: '/classics' }
