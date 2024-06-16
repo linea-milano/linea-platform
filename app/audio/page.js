@@ -1,6 +1,7 @@
+// app/audio/page.jsx
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './audio.css';
 
 const TOKEN_URL = 'https://linea-proxy.xyz/get-token';
@@ -105,15 +106,4 @@ export default function Page() {
 
     return (
         <>
-            <h1>AUDIO ARCHIVIO</h1>
-            <div id="tracks"></div>
-            <iframe
-                id="sc-widget"
-                className="soundcloud-widget"
-                scrolling="no"
-                frameBorder="no"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303&auto_play=false"
-            ></iframe>
-        </>
-    );
-}
+            <h1>AUDIO ARCHIVIO

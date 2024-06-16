@@ -1,41 +1,46 @@
+/* styles/globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: #000;
     color: #fff;
-    font-family: 'Asimov', Arial, sans-serif;
-width: 100%;
+    overflow-x: hidden; /* Evita lo scroll orizzontale */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
 }
 
 nav {
-    border-bottom: 1px solid #fff; /* Riga bianca che separa il menu dal resto del sito */
+    width: 100%;
+    background-color: #000; /* Assicura che il menu occupi tutta la larghezza */
 }
 
-.logo-menu {
-    width: 50px; /* Modifica la dimensione del logo */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+    margin: 0;
 }
 
-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-}
-
-@media (min-width: 1024px) {
-    .logo-menu {
-        width: 70px; /* Dimensione del logo su schermi grandi */
-    }
-
-    ul {
-        display: flex !important;
-    }
-
-    button {
-        display: none;
-    }
+nav ul li {
+    flex: 1;
+    text-align: center;
 }

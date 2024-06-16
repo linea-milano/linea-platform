@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+// components/header.jsx
 import Image from 'next/image';
 import Link from 'next/link';
 import lineaLogo from 'public/linea-logo.png';
@@ -15,33 +13,26 @@ const navItems = [
     { linkText: 'Test', href: '/classics' }
 ];
 
-export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
+export function Header() {
     return (
         <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
             <Link href="/">
-                <Image src={lineaLogo} alt="Linea logo" className="logo-menu" />
+                <Image src={lineaLogo} alt="Linea logo" className="logo" />
             </Link>
-            <button className="lg:hidden" onClick={toggleMenu}>
-                ☰
-            </button>
-            <ul className={`flex flex-wrap gap-x-4 gap-y-1 ${menuOpen ? 'block' : 'hidden'} lg:flex`}>
-                {navItems.map((item, index) => (
-                    <li key={index}>
-                        <Link
-                            href={item.href}
-                            className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2"
-                        >
-                            {item.linkText}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            {!!navItems?.length && (
+                <ul className="flex flex-wrap gap-x-4 gap-y-1">
+                    {navItems.map((item, index) => (
+                        <li key={index}>
+                            <Link
+                                href={item.href}
+                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2"
+                            >
+                                {item.linkText}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
             <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
                 <Link
                     href="https://github.com/netlify-templates/next-platform-starter"
