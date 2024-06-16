@@ -4,73 +4,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-blue-900 text-yellow-200;
-        font-size: 0.9em;
-    }
-
-    h1 {
-        @apply mb-6 text-4xl font-bold tracking-tight md:text-5xl;
-    }
-}
-
-html {
-  background-color: #000000; /* Colore di sfondo nero */
-}
-
 body {
-  background-color: #000000; /* Assicurati che anche il body abbia lo sfondo nero */
-    font-family: 'Asimov', Arial, sans-serif;
     background-color: #000;
     color: #fff;
+    font-family: 'Asimov', Arial, sans-serif;
 }
 
-a {
-    @apply underline
-}
-
-.markdown {
-    @apply mb-1;
-}
-
-.alert .markdown {
-    @apply mb-0;
-}
-
-.markdown p {
-    @apply mb-3;
-}
-
-.btn:disabled {
-    @apply text-neutral-400 bg-neutral-700;
-}
-
-@font-face {
-    font-family: 'Asimov';
-    src: url('/styles/Asimovprint.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+nav {
+    border-bottom: 1px solid #fff; /* Riga bianca che separa il menu dal resto del sito */
 }
 
 .logo-menu {
-  width: 50px; /* Dimensione del logo */
+    width: 50px; /* Modifica la dimensione del logo */
 }
 
-@media (max-width: 1024px) {
-  .lg\:hidden {
-    display: none;
-  }
-  .lg\:flex {
-    display: flex;
-  }
+button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
 }
 
-@media (max-width: 768px) {
-  .lg\:hidden {
-    display: none;
-  }
-  .lg\:flex {
-    display: flex;
-  }
+@media (min-width: 1024px) {
+    .logo-menu {
+        width: 70px; /* Dimensione del logo su schermi grandi */
+    }
+
+    ul {
+        display: flex !important;
+    }
+
+    button {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    ul {
+        display: none;
+    }
 }
