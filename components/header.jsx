@@ -1,5 +1,5 @@
 // components/header.jsx
-'use client'; // Aggiungi questa riga per indicare che questo componente è un Client Component
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
