@@ -2,14 +2,14 @@
 import '../styles/globals.css';
 import { Header, MobileHeader } from '../components/header';
 
-function MyApp({ Component, pageProps }) {
+function RootLayout({ children }) {
     return (
         <>
             <Header />
-            <Component {...pageProps} />
+            <main>{children}</main>
             <MobileHeader />
         </>
     );
 }
 
-export default MyApp;
+export default RootLayout;
