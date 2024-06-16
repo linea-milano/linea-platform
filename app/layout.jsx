@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+import Header from '../components/header'; // Import corretto di Header
 
 export const metadata = {
     title: {
