@@ -1,4 +1,6 @@
 // components/header.jsx
+'use client'; // Aggiungi questa riga per indicare che questo componente è un Client Component
+
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,45 +18,25 @@ const navItems = [
 
 export function Header() {
     return (
-        <nav className="desktop-menu flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="flex items-center justify-between py-6 px-4 border-b border-white">
             <Link href="/">
                 <Image src={lineaLogo} alt="Linea logo" className="logo-menu" />
             </Link>
-            {!!navItems?.length && (
-                <ul className="flex flex-wrap gap-x-4 gap-y-1">
-                    {navItems.map((item, index) => (
-                        <li key={index}>
-                            <Link
-                                href={item.href}
-                                className="inline-block px-1.5 py-1 transition hover:opacity-80 sm:px-3 sm:py-2"
-                            >
-                                {item.linkText}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
-            <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
-                <Link
-                    href="https://github.com/netlify-templates/next-platform-starter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image src={githubLogo} alt="GitHub logo" className="w-7" />
+            <ul className="flex gap-4">
+                {navItems.map((item, index) => (
+                    <li key={index}>
+                        <Link href={item.href} className="text-white hover:text-gray-400 transition">
+                            {item.linkText}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+            <div className="flex items-center gap-4">
+                <button className="text-white hover:text-gray-400 transition">Search</button>
+                <Link href="https://github.com/netlify-templates/next-platform-starter" target="_blank" rel="noopener noreferrer">
+                    <Image src={githubLogo} alt="GitHub logo" className="w-6" />
                 </Link>
             </div>
-        </nav>
-    );
-}
-
-export function MobileHeader() {
-    return (
-        <nav className="mobile-menu fixed bottom-0 w-full bg-black text-white flex justify-around py-2">
-            {navItems.map((item, index) => (
-                <Link key={index} href={item.href} className="py-2 px-4">
-                    {item.linkText}
-                </Link>
-            ))}
         </nav>
     );
 }
