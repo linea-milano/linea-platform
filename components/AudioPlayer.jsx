@@ -1,6 +1,6 @@
 // components/AudioPlayer.jsx
 import React from 'react';
-import './audio.css';
+import '../../styles/audio.css';
 
 const TOKEN_URL = 'https://linea-proxy.xyz/get-token';
 const USER_URL = 'https://linea-proxy.xyz/get-user';
